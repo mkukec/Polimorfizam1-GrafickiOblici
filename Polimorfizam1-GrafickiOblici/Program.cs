@@ -22,42 +22,25 @@ namespace Polimorfizam1_GrafickiOblici
             // se izrade strukture za pohranu podataka te se pozove iscrtavanje
             // svakog objekta.
 
-            // Strukture za pohranu podataka 
-            List<Trokut> trokuti = new List<Trokut>();
-            List<Cetverokut> cetverokuti = new List<Cetverokut>();
-            List<Kruznica> kruznice = new List<Kruznica>();
+            // Struktura za pohranu podataka 
+            List<GrafickiOblik> grafickiOblici = new List<GrafickiOblik>();
 
             // ... programski kod za dodavanje oblika pomoću korisničkog sučelja
 
             // Crtež kojeg je korisnik izradio se sastoji od dva trokuta,
             // dve cetverokuta i dvije kružnice
-            trokuti.Add(new Trokut());  
-            trokuti.Add(new Trokut());
-            cetverokuti.Add(new Cetverokut());
-            cetverokuti.Add(new Cetverokut());
-            kruznice.Add(new Kruznica());
-            kruznice.Add(new Kruznica());
 
-            /* Mogli bi za svaki objekt pisati i ovako: */
-            // Trokut t1 = new Trokut();
-            // trokuti.Add(t1);
-            /* Međutim gornji zapis je kraći; reference za objekte se čuvaju
-             * u listama, to je dovoljno */
+            grafickiOblici.Add(new Trokut());
+            grafickiOblici.Add(new Trokut());
+            grafickiOblici.Add(new Cetverokut());
+            grafickiOblici.Add(new Cetverokut());
+            grafickiOblici.Add(new Kruznica());
+            grafickiOblici.Add(new Kruznica());
 
             // Programski kod za iscrtavanje (općenito obradu podataka)
-            foreach (Trokut t in trokuti)
+            foreach (GrafickiOblik go in grafickiOblici)
             {
-                t.nacrtaj();
-            }
-
-            foreach(Cetverokut c in cetverokuti)
-            {
-                c.nacrtaj();
-            }
-
-            foreach(Kruznica k in kruznice)
-            {
-                k.nacrtaj();
+                go.nacrtaj();
             }
 
             // Program je završen; prezentiran, korisnici zadovoljni! 
@@ -67,6 +50,35 @@ namespace Polimorfizam1_GrafickiOblici
 
             // Što je potrebno učiniti da se doda novi grafički oblik? Novih 10? Novih 20?
             // Što je potrebno učiniti da se dodaju nove operacije/funkcije? 
+
+            Console.WriteLine();
+            Console.WriteLine();
+
+            GrafickiOblik go1 = new Kruznica();
+            go1.nacrtaj();
+
+            int vrijednostKojuUnosiKorisnik = 100;
+
+            // kojeg je tipa go2 tijekom prevođenja?
+            // kojeg je tipa go2 tijekom izvođenja?
+            GrafickiOblik go2;
+            if (vrijednostKojuUnosiKorisnik < 50)
+            {
+                go2 = new Kruznica();
+            } else
+            {
+                go2 = new Trokut();
+            }
+            go2.nacrtaj();
+
+            GrafickiOblik go3 = new Trokut();
+            go3.nacrtaj();
+
+
+
+
+
+
 
 
         }

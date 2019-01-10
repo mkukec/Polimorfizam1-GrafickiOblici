@@ -8,7 +8,7 @@ namespace Polimorfizam1_GrafickiOblici
 {
     class Cetverokut : GrafickiOblik
     {
-        public void nacrtaj()
+        public override void nacrtaj()
         {
             Console.WriteLine("Razred " + GetType() + " - Metoda: nacrtaj()");
         }
